@@ -1,6 +1,6 @@
 import heroAsset from "./src/assets/hero.png";
 
-const navLinks = ["Home", "About Us", "Services", "Pricing"];
+const navLinks = ["Home", "About Us", "Services", "Pricing", "Contact"];
 
 const services = [
   {
@@ -121,8 +121,20 @@ export default function Home() {
             {navLinks.map((link) => (
               <a
                 key={link}
-                href={`#${link === "Home" ? "home" : link.toLowerCase().replaceAll(" ", "-")}`}
-                className="transition hover:text-white first:text-violet-400 first:underline first:decoration-violet-500 first:decoration-2 first:underline-offset-8"
+                href={
+                  link === "Home"
+                    ? "/"
+                    : link === "About Us"
+                      ? "/about"
+                      : link === "Contact"
+                        ? "/contact"
+                        : `#${link.toLowerCase().replaceAll(" ", "-")}`
+                }
+                className={
+                  link === "Home"
+                    ? "text-violet-400 underline decoration-violet-500 decoration-2 underline-offset-8 transition hover:text-white"
+                    : "transition hover:text-white"
+                }
               >
                 {link}
               </a>
@@ -130,7 +142,7 @@ export default function Home() {
           </div>
 
           <a
-            href="#request-quote"
+            href="/contact"
             className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
           >
             Request Quote
@@ -170,7 +182,7 @@ export default function Home() {
                   Explore Services -&gt;
                 </a>
                 <a
-                  href="#about-us"
+                  href="/about"
                   className="rounded-md border border-white/12 bg-white/10 px-6 py-3 text-sm font-bold text-slate-200 transition hover:bg-white/15"
                 >
                   View Portfolio
@@ -240,22 +252,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#0d1628] py-12 text-center sm:py-16">
-          <div className="mx-auto max-w-4xl px-5 sm:px-8">
-            <div className="text-5xl font-black leading-none text-cyan-400">''</div>
-            <blockquote className="mx-auto mt-3 max-w-3xl text-sm font-medium leading-7 text-slate-300 sm:text-base">
+        <section className="border-y border-white/10 bg-[#0d1628] py-11 text-center sm:py-12">
+          <div className="mx-auto max-w-5xl px-5 sm:px-8">
+            <div className="text-[52px] font-black leading-[0.7] text-cyan-400">''</div>
+            <blockquote className="mx-auto mt-5 max-w-[860px] text-base font-medium leading-7 text-slate-300">
               "CodeCraft didn't just build our app; they rebuilt our entire engineering culture.
               Their technical precision is unmatched in the industry."
             </blockquote>
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <div className="h-14 w-14 overflow-hidden rounded-md border border-violet-400 bg-slate-800 shadow-[0_0_24px_rgba(124,58,237,0.5)]">
-                <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(140deg,#1f2937,#475569)] text-2xl">
-                  M
-                </div>
+            <div className="mt-8 flex items-center justify-center gap-5">
+              <div className="h-[58px] w-[58px] overflow-hidden rounded-lg border-2 border-violet-500 bg-slate-900 p-1 shadow-[0_0_22px_rgba(124,58,237,0.62)]">
+                <img
+                  src="/Images/person-icon.png"
+                  alt="Marcus Thorne"
+                  className="h-full w-full rounded-md object-cover"
+                />
               </div>
               <div className="text-left">
-                <p className="text-sm font-black text-white">Marcus Thorne</p>
-                <p className="text-xs font-bold text-cyan-500">CTO, NexCore Systems</p>
+                <p className="text-base font-black leading-tight text-white">Marcus Thorne</p>
+                <p className="mt-1 text-sm font-bold leading-tight text-cyan-500">CTO, NexaCore Systems</p>
               </div>
             </div>
           </div>
@@ -280,47 +294,47 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#19151e] px-5 py-12 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+      <footer className="border-t border-white/10 bg-[#19151e] px-6 py-16 sm:px-10">
+        <div className="mx-auto grid max-w-[1560px] grid-cols-1 gap-12 text-sm text-slate-300 md:grid-cols-[320px_180px_220px_160px] md:justify-between md:gap-16">
+          <div className="md:pl-2">
             <img
               src="/Images/codecraft-logo.svg"
               alt="CodeCraft Solutions"
-              className="h-16 w-52 object-contain object-left"
+              className="h-[68px] w-[250px] object-contain object-left"
             />
-            <p className="mt-6 max-w-xs font-medium leading-7 text-slate-400">
+            <p className="mt-11 max-w-[310px] text-base font-bold leading-8 text-slate-400">
               Precision Engineering for Software. Building the future of digital infrastructure
               since 2018.
             </p>
           </div>
 
-          <div>
-            <h3 className="font-black text-white">Company</h3>
-            <ul className="mt-5 space-y-3 text-slate-400">
-              <li><a className="transition hover:text-white" href="#home">Home</a></li>
-              <li><a className="transition hover:text-white" href="#about-us">About Us</a></li>
+          <div className="pt-1">
+            <h3 className="text-lg font-black text-white">Company</h3>
+            <ul className="mt-8 space-y-5 text-base text-slate-300">
+              <li><a className="transition hover:text-white" href="/">Home</a></li>
+              <li><a className="transition hover:text-white" href="/about">About Us</a></li>
               <li><a className="transition hover:text-white" href="#services">Services</a></li>
               <li><a className="transition hover:text-white" href="#pricing">Pricing</a></li>
-              <li><a className="transition hover:text-white" href="#request-quote">Request Quote</a></li>
+              <li><a className="transition hover:text-white" href="/contact">Request Quote</a></li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-black text-white">Resources</h3>
-            <ul className="mt-5 space-y-3 text-slate-400">
-              <li><a className="transition hover:text-white" href="mailto:hello@codecraft.solutions">Contact</a></li>
+          <div className="pt-1">
+            <h3 className="text-lg font-black text-white">Resources</h3>
+            <ul className="mt-8 space-y-5 text-base text-slate-300">
+              <li><a className="transition hover:text-white" href="/contact">Contact</a></li>
               <li><a className="transition hover:text-white" href="#privacy">Privacy Policy</a></li>
               <li><a className="transition hover:text-white" href="#terms">Terms of Service</a></li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-black text-white">Connect</h3>
-            <div className="mt-5 flex gap-3">
+          <div className="pt-1">
+            <h3 className="text-lg font-black text-white">Connect</h3>
+            <div className="mt-8 flex gap-4">
               <a
                 href="https://wa.me/"
                 aria-label="WhatsApp"
-                className="flex h-10 w-10 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
+                className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
@@ -342,7 +356,7 @@ export default function Home() {
               <a
                 href="mailto:hello@codecraft.solutions"
                 aria-label="Email"
-                className="flex h-10 w-10 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
+                className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
               >
                 <span className="text-lg">@</span>
               </a>
@@ -350,7 +364,7 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="mx-auto mt-12 max-w-7xl text-center text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
+        <p className="mx-auto mt-14 max-w-[1560px] text-center text-xs font-black uppercase tracking-[0.35em] text-slate-500">
           (c) 2024 CodeCraft Solutions. Precision Engineering for Software.
         </p>
       </footer>

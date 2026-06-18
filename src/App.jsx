@@ -1,6 +1,7 @@
 import Home from "../Home";
 import About from "../About";
 import Contact from "../Contact";
+import Pricing from "../Pricing";
 import Services from "../Services";
 
 function App() {
@@ -8,12 +9,16 @@ function App() {
     return <About />;
   }
 
-  if (window.location.pathname === "/services" || window.location.pathname === "/pricing") {
+  if (window.location.pathname === "/services") {
     return <Services />;
   }
 
   if (window.location.pathname === "/contact") {
     return <Contact />;
+  }
+
+  if (window.location.pathname === "/pricing") {
+    return <Pricing />;
   }
 
   return <Home />;

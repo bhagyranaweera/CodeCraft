@@ -57,7 +57,7 @@ function Header() {
           >
             About Us
           </a>
-          <a href="/services" className="transition hover:text-white">Services</a>
+          <a href="/#services" className="transition hover:text-white">Services</a>
           <a href="/pricing" className="transition hover:text-white">Pricing</a>
           <a href="/contact" className="transition hover:text-white">Contact</a>
         </div>
@@ -89,7 +89,7 @@ function Footer() {
           <ul className="mt-5 space-y-3">
             <li><a href="/" className="transition hover:text-white">Home</a></li>
             <li><a href="/about" className="font-black text-violet-300">About Us</a></li>
-            <li><a href="/services" className="transition hover:text-white">Services</a></li>
+            <li><a href="/#services" className="transition hover:text-white">Services</a></li>
             <li><a href="/pricing" className="transition hover:text-white">Pricing</a></li>
             <li><a href="/contact" className="transition hover:text-white">Request Quote</a></li>
           </ul>

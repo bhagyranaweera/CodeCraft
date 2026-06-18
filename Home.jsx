@@ -128,7 +128,9 @@ export default function Home() {
                       ? "/about"
                       : link === "Contact"
                         ? "/contact"
-                        : `/${link.toLowerCase()}`
+                        : link === "Pricing"
+                          ? "/pricing"
+                          : "/#services"
                 }
                 className={
                   link === "Home"

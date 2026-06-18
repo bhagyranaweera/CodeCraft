@@ -13,8 +13,8 @@ function Header() {
         <div className="hidden items-center gap-8 text-sm font-semibold text-slate-400 md:flex">
           <a href="/" className="transition hover:text-white">Home</a>
           <a href="/about" className="transition hover:text-white">About Us</a>
-          <a href="/#services" className="transition hover:text-white">Services</a>
-          <a href="/#pricing" className="transition hover:text-white">Pricing</a>
+          <a href="/services" className="transition hover:text-white">Services</a>
+          <a href="/pricing" className="transition hover:text-white">Pricing</a>
           <a
             href="/contact"
             className="text-violet-400 underline decoration-violet-500 decoration-2 underline-offset-8 transition hover:text-white"
@@ -59,8 +59,8 @@ function Footer() {
           <ul className="mt-5 space-y-3">
             <li><a href="/" className="transition hover:text-white">Home</a></li>
             <li><a href="/about" className="transition hover:text-white">About Us</a></li>
-            <li><a href="/#services" className="transition hover:text-white">Services</a></li>
-            <li><a href="/#pricing" className="transition hover:text-white">Pricing</a></li>
+            <li><a href="/services" className="transition hover:text-white">Services</a></li>
+            <li><a href="/pricing" className="transition hover:text-white">Pricing</a></li>
             <li><a href="/contact" className="transition hover:text-white">Request Quote</a></li>
           </ul>
         </div>

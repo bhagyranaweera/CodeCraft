@@ -128,7 +128,7 @@ export default function Home() {
                       ? "/about"
                       : link === "Contact"
                         ? "/contact"
-                        : `#${link.toLowerCase().replaceAll(" ", "-")}`
+                        : `/${link.toLowerCase()}`
                 }
                 className={
                   link === "Home"
@@ -313,8 +313,8 @@ export default function Home() {
             <ul className="mt-8 space-y-5 text-base text-slate-300">
               <li><a className="transition hover:text-white" href="/">Home</a></li>
               <li><a className="transition hover:text-white" href="/about">About Us</a></li>
-              <li><a className="transition hover:text-white" href="#services">Services</a></li>
-              <li><a className="transition hover:text-white" href="#pricing">Pricing</a></li>
+              <li><a className="transition hover:text-white" href="/services">Services</a></li>
+              <li><a className="transition hover:text-white" href="/pricing">Pricing</a></li>
               <li><a className="transition hover:text-white" href="/contact">Request Quote</a></li>
             </ul>
           </div>

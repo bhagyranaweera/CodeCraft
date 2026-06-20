@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
@@ -69,8 +71,8 @@ function Footer() {
           <h3 className="font-black text-white">Resources</h3>
           <ul className="mt-5 space-y-3">
             <li><a href="/contact" className="font-black text-violet-300">Contact</a></li>
-            <li><a href="#privacy" className="transition hover:text-white">Privacy Policy</a></li>
-            <li><a href="#terms" className="transition hover:text-white">Terms of Service</a></li>
+            <li><a href="#privacy" data-policy-popup="privacy" className="transition hover:text-white">Privacy Policy</a></li>
+            <li><a href="#terms" data-policy-popup="terms" className="transition hover:text-white">Terms of Service</a></li>
           </ul>
         </div>
 
@@ -106,18 +108,39 @@ function Footer() {
             >
               <span className="text-lg">@</span>
             </a>
+            <a
+              href="https://www.instagram.com/"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+                <circle cx="16.8" cy="7.2" r="1" fill="currentColor" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
 
-      <p className="mx-auto mt-9 max-w-[1120px] text-center text-[9px] font-black uppercase tracking-[0.32em] text-slate-500">
-        (c) 2024 CodeCraft Solutions. Precision Engineering for Software.
+      <p className="mx-auto mt-9 max-w-[1120px] text-center text-[9px] tracking-[0.22em] text-slate-500">
+        <span className="block font-normal uppercase">(c) 2024 CodeCraft Solutions. All rights reserved.</span>
+        <span className="mt-2 block text-sm font-bold normal-case tracking-normal">
+          This website is for a class assignment project and not for commercial purpose.
+        </span>
       </p>
     </footer>
   );
 }
 
 export default function Contact() {
+  const [showMessagePopup, setShowMessagePopup] = useState(false);
+
+  const handleMessageSubmit = (event) => {
+    event.preventDefault();
+    setShowMessagePopup(true);
+  };
+
   return (
     <div className="min-h-screen bg-[#120e18] text-slate-100 selection:bg-violet-500/40">
       <Header />
@@ -134,7 +157,10 @@ export default function Contact() {
             </p>
 
             <div className="mt-8 grid gap-8 lg:grid-cols-[1.25fr_0.88fr]">
-              <form className="min-h-[830px] rounded-md border border-white/12 bg-[#211c26] p-6">
+              <form
+                className="min-h-[830px] rounded-md border border-white/12 bg-[#211c26] p-6"
+                onSubmit={handleMessageSubmit}
+              >
                 <h2 className="text-2xl font-semibold text-slate-200">General Inquiry</h2>
 
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -174,7 +200,7 @@ export default function Contact() {
 
                 <button
                   className="mt-4 bg-violet-200 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-violet-900 transition hover:bg-white"
-                  type="button"
+                  type="submit"
                 >
                   Send Message &gt;
                 </button>
@@ -256,6 +282,27 @@ export default function Contact() {
           </div>
         </section>
       </main>
+
+      {showMessagePopup && (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 px-5 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-md border border-violet-400/40 bg-[#211c26] p-7 text-center shadow-[0_0_45px_rgba(124,58,237,0.35)]">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-[#06B6D4] bg-[#06B6D4]/10 text-xl text-[#06B6D4]">
+              ✓
+            </div>
+            <h2 className="mt-5 text-2xl font-semibold text-violet-100">Message Sent Successfully</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-400">
+              Thank you for contacting CodeCraft Solutions. Our team will get back to you soon.
+            </p>
+            <button
+              className="mt-6 bg-violet-600 px-7 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-violet-500"
+              type="button"
+              onClick={() => setShowMessagePopup(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

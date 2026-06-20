@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const navItems = [
   ["Home", "/"],
   ["About Us", "/about"],
@@ -76,8 +78,8 @@ function Footer() {
           <h3 className="text-lg font-black text-white">Resources</h3>
           <ul className="mt-8 space-y-5 text-base text-slate-300">
             <li><a className="transition hover:text-white" href="/contact">Contact</a></li>
-            <li><a className="transition hover:text-white" href="#privacy">Privacy Policy</a></li>
-            <li><a className="transition hover:text-white" href="#terms">Terms of Service</a></li>
+            <li><a className="transition hover:text-white" href="#privacy" data-policy-popup="privacy">Privacy Policy</a></li>
+            <li><a className="transition hover:text-white" href="#terms" data-policy-popup="terms">Terms of Service</a></li>
           </ul>
         </div>
 
@@ -106,19 +108,33 @@ function Footer() {
                 />
               </svg>
             </a>
-            <a
-              href="mailto:hello@codecraft.solutions"
-              aria-label="Email"
-              className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
-            >
-              <span className="text-lg">@</span>
-            </a>
+              <a
+                href="mailto:hello@codecraft.solutions"
+                aria-label="Email"
+                className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
+              >
+                <span className="text-lg">@</span>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                aria-label="Instagram"
+                className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="16.8" cy="7.2" r="1" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
       </div>
 
-      <p className="mx-auto mt-14 max-w-[1560px] text-center text-xs font-black uppercase tracking-[0.35em] text-slate-500">
-        (c) 2024 CodeCraft Solutions. Precision Engineering for Software.
+      <p className="mx-auto mt-14 max-w-[1560px] text-center text-xs tracking-[0.22em] text-slate-500">
+        <span className="block font-normal uppercase">(c) 2024 CodeCraft Solutions. All rights reserved.</span>
+        <span className="mt-2 block text-sm font-bold normal-case tracking-normal">
+          This website is for a class assignment project and not for commercial purpose.
+        </span>
       </p>
     </footer>
   );
@@ -146,13 +162,8 @@ function CheckoutStep({ number, label, active, muted }) {
   );
 }
 
-function Field({ label, children }) {
-  return (
-    <label className="block">
-      <span className="text-xs font-black uppercase tracking-[0.22em] text-slate-400">{label}</span>
-      <div className="mt-3">{children}</div>
-    </label>
-  );
+function Field() {
+  return null;
 }
 
 function CheckItem({ children }) {
@@ -167,6 +178,8 @@ function CheckItem({ children }) {
 }
 
 export default function Pricing() {
+  const [showPaypalDemo, setShowPaypalDemo] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#111014] text-slate-100 selection:bg-violet-500/40">
       <Header />
@@ -195,10 +208,50 @@ export default function Pricing() {
           <section className="mx-auto max-w-[840px] rounded-lg border border-white/12 bg-[#191820] p-7 shadow-xl">
             <h1 className="flex items-center gap-3 text-3xl font-bold text-slate-200">
               <span className="text-[#06B6D4]">▭</span>
-              Payment Information
+              PayPal Demo Payment
             </h1>
 
             <div className="mt-8 grid gap-6">
+              <div className="rounded-md border border-[#06B6D4]/40 bg-[#100f14] p-6">
+                <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-[#06B6D4]">
+                      Sandbox Checkout
+                    </p>
+                    <h2 className="mt-3 text-3xl font-black text-white">
+                      PayPal <span className="text-[#06B6D4]">Demo</span>
+                    </h2>
+                    <p className="mt-3 max-w-[520px] text-sm font-medium leading-6 text-slate-400">
+                      Use this demo PayPal payment option for the class assignment. It simulates a
+                      sandbox checkout and does not process real money.
+                    </p>
+                  </div>
+
+                  <div className="rounded-md bg-white px-5 py-4 text-center shadow-[0_0_22px_rgba(6,182,212,0.18)]">
+                    <span className="text-2xl font-black text-[#003087]">Pay</span>
+                    <span className="text-2xl font-black text-[#009CDE]">Pal</span>
+                    <p className="mt-1 text-[10px] font-black uppercase tracking-[0.18em] text-slate-500">
+                      Sandbox
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-7 grid gap-4 md:grid-cols-3">
+                  <div className="rounded-sm border border-white/10 bg-white/5 p-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Demo Account</p>
+                    <p className="mt-2 text-sm font-semibold text-slate-300">buyer-demo@codecraft.test</p>
+                  </div>
+                  <div className="rounded-sm border border-white/10 bg-white/5 p-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Payment Type</p>
+                    <p className="mt-2 text-sm font-semibold text-slate-300">PayPal Sandbox</p>
+                  </div>
+                  <div className="rounded-sm border border-white/10 bg-white/5 p-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Amount</p>
+                    <p className="mt-2 font-mono text-sm font-semibold text-slate-300">$12,000.00</p>
+                  </div>
+                </div>
+              </div>
+
               <Field label="Cardholder Name">
                 <input
                   className="h-14 w-full rounded-sm border border-white/18 bg-[#100f14] px-5 text-lg text-slate-300 outline-none placeholder:text-slate-600 focus:border-violet-400"
@@ -236,8 +289,12 @@ export default function Pricing() {
                 </Field>
               </div>
 
-              <button className="mt-3 rounded-sm bg-[#7C3AED] py-4 text-lg font-black text-violet-100 transition hover:bg-violet-500">
-                Process Payment - $12,000.00
+              <button
+                className="mt-3 rounded-sm bg-[#ffc439] py-4 text-lg font-black text-[#003087] transition hover:bg-[#f4bb2f]"
+                type="button"
+                onClick={() => setShowPaypalDemo(true)}
+              >
+                Pay with PayPal Demo - $12,000.00
               </button>
             </div>
           </section>
@@ -317,6 +374,28 @@ export default function Pricing() {
           </section>
         </section>
       </main>
+
+      {showPaypalDemo && (
+        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/75 px-5 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-xl border border-[#06B6D4]/35 bg-[#15182b] p-7 text-center shadow-[0_0_55px_rgba(6,182,212,0.2)]">
+            <div className="mx-auto rounded-md bg-white px-6 py-4">
+              <span className="text-3xl font-black text-[#003087]">Pay</span>
+              <span className="text-3xl font-black text-[#009CDE]">Pal</span>
+            </div>
+            <h2 className="mt-6 text-2xl font-black text-white">Demo Payment Successful</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-400">
+              Sandbox payment completed for the Advanced Plan. This is a demo for the class assignment and no real payment was processed.
+            </p>
+            <button
+              className="mt-6 w-full rounded-lg bg-[#7C3AED] py-3 text-sm font-black text-white transition hover:bg-violet-500"
+              type="button"
+              onClick={() => setShowPaypalDemo(false)}
+            >
+              Got It
+            </button>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

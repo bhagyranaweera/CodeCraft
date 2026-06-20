@@ -4,29 +4,39 @@ import Contact from "../Contact";
 import Pricing from "../Pricing";
 import Services from "../Services";
 import RequestQuote from "../RequestQuote";
+import PolicyPopup from "./PolicyPopup";
+
+function PageShell({ children }) {
+  return (
+    <>
+      {children}
+      <PolicyPopup />
+    </>
+  );
+}
 
 function App() {
   if (window.location.pathname === "/about") {
-    return <About />;
+    return <PageShell><About /></PageShell>;
   }
 
   if (window.location.pathname === "/services") {
-    return <Services />;
+    return <PageShell><Services /></PageShell>;
   }
 
   if (window.location.pathname === "/contact") {
-    return <Contact />;
+    return <PageShell><Contact /></PageShell>;
   }
 
   if (window.location.pathname === "/pricing") {
-    return <Pricing />;
+    return <PageShell><Pricing /></PageShell>;
   }
 
   if (window.location.pathname === "/request-quote") {
-    return <RequestQuote />;
+    return <PageShell><RequestQuote /></PageShell>;
   }
 
-  return <Home />;
+  return <PageShell><Home /></PageShell>;
 }
 
 export default App;

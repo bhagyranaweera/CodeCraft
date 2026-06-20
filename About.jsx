@@ -99,8 +99,8 @@ function Footer() {
           <h3 className="font-black text-white">Resources</h3>
           <ul className="mt-5 space-y-3">
             <li><a href="/contact" className="transition hover:text-white">Contact</a></li>
-            <li><a href="#privacy" className="transition hover:text-white">Privacy Policy</a></li>
-            <li><a href="#terms" className="transition hover:text-white">Terms of Service</a></li>
+            <li><a href="#privacy" data-policy-popup="privacy" className="transition hover:text-white">Privacy Policy</a></li>
+            <li><a href="#terms" data-policy-popup="terms" className="transition hover:text-white">Terms of Service</a></li>
           </ul>
         </div>
 
@@ -136,12 +136,26 @@ function Footer() {
             >
               <span className="text-lg">@</span>
             </a>
+            <a
+              href="https://www.instagram.com/"
+              aria-label="Instagram"
+              className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+                <circle cx="16.8" cy="7.2" r="1" fill="currentColor" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
 
-      <p className="mx-auto mt-10 max-w-[1220px] text-center text-[9px] font-black uppercase tracking-[0.32em] text-slate-500">
-        (c) 2024 CodeCraft Solutions. Precision Engineering for Software.
+      <p className="mx-auto mt-10 max-w-[1220px] text-center text-[9px] tracking-[0.22em] text-slate-500">
+        <span className="block font-normal uppercase">(c) 2024 CodeCraft Solutions. All rights reserved.</span>
+        <span className="mt-2 block text-sm font-bold normal-case tracking-normal">
+          This website is for a class assignment project and not for commercial purpose.
+        </span>
       </p>
     </footer>
   );

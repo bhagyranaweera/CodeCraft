@@ -319,8 +319,8 @@ export default function Home() {
             <h3 className="text-lg font-black text-white">Resources</h3>
             <ul className="mt-8 space-y-5 text-base text-slate-300">
               <li><a className="transition hover:text-white" href="/contact">Contact</a></li>
-              <li><a className="transition hover:text-white" href="#privacy">Privacy Policy</a></li>
-              <li><a className="transition hover:text-white" href="#terms">Terms of Service</a></li>
+              <li><a className="transition hover:text-white" href="#privacy" data-policy-popup="privacy">Privacy Policy</a></li>
+              <li><a className="transition hover:text-white" href="#terms" data-policy-popup="terms">Terms of Service</a></li>
             </ul>
           </div>
 
@@ -356,12 +356,26 @@ export default function Home() {
               >
                 <span className="text-lg">@</span>
               </a>
+              <a
+                href="https://www.instagram.com/"
+                aria-label="Instagram"
+                className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="16.8" cy="7.2" r="1" fill="currentColor" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
 
-        <p className="mx-auto mt-14 max-w-[1560px] text-center text-xs font-black uppercase tracking-[0.35em] text-slate-500">
-          (c) 2024 CodeCraft Solutions. Precision Engineering for Software.
+        <p className="mx-auto mt-14 max-w-[1560px] text-center text-xs tracking-[0.22em] text-slate-500">
+          <span className="block font-normal uppercase">(c) 2024 CodeCraft Solutions. All rights reserved.</span>
+          <span className="mt-2 block text-sm font-bold normal-case tracking-normal">
+            This website is for a class assignment project and not for commercial purpose.
+          </span>
         </p>
       </footer>
     </div>

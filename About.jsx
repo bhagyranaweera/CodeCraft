@@ -57,13 +57,13 @@ function Header() {
           >
             About Us
           </a>
-          <a href="/#services" className="transition hover:text-white">Services</a>
+          <a href="/services" className="transition hover:text-white">Services</a>
           <a href="/pricing" className="transition hover:text-white">Pricing</a>
           <a href="/contact" className="transition hover:text-white">Contact</a>
         </div>
 
         <a
-          href="/contact"
+          href="/request-quote"
           className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
@@ -89,9 +89,9 @@ function Footer() {
           <ul className="mt-5 space-y-3">
             <li><a href="/" className="transition hover:text-white">Home</a></li>
             <li><a href="/about" className="font-black text-violet-300">About Us</a></li>
-            <li><a href="/#services" className="transition hover:text-white">Services</a></li>
+            <li><a href="/services" className="transition hover:text-white">Services</a></li>
             <li><a href="/pricing" className="transition hover:text-white">Pricing</a></li>
-            <li><a href="/contact" className="transition hover:text-white">Request Quote</a></li>
+            <li><a href="/request-quote" className="transition hover:text-white">Request Quote</a></li>
           </ul>
         </div>
 
@@ -356,18 +356,12 @@ export default function About() {
             Let's discuss how our precision engineering approach can transform your business goals
             into reality.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-5">
+          <div className="mt-10 flex justify-center">
             <a
-              href="mailto:hello@codecraft.solutions"
+              href="/request-quote"
               className="rounded-lg bg-[#06B6D4] px-12 py-4 text-sm font-black text-slate-950 transition hover:bg-cyan-300"
             >
               Schedule a Consultation
-            </a>
-            <a
-              href="/services"
-              className="rounded-lg border border-white/25 bg-white/5 px-12 py-4 text-sm font-black text-white transition hover:bg-white/12"
-            >
-              View Our Portfolio
             </a>
           </div>
         </section>

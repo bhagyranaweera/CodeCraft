@@ -1,7 +1,7 @@
 const navItems = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Services", "/#services"],
+  ["Services", "/services"],
   ["Pricing", "/pricing"],
   ["Contact", "/contact"],
 ];
@@ -35,7 +35,7 @@ function Header() {
         </div>
 
         <a
-          href="/contact"
+          href="/request-quote"
           className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
@@ -66,9 +66,9 @@ function Footer() {
           <ul className="mt-8 space-y-5 text-base text-slate-300">
             <li><a className="transition hover:text-white" href="/">Home</a></li>
             <li><a className="transition hover:text-white" href="/about">About Us</a></li>
-            <li><a className="transition hover:text-white" href="/#services">Services</a></li>
+            <li><a className="transition hover:text-white" href="/services">Services</a></li>
             <li><a className="font-black text-violet-300" href="/pricing">Pricing</a></li>
-            <li><a className="transition hover:text-white" href="/contact">Request Quote</a></li>
+            <li><a className="transition hover:text-white" href="/request-quote">Request Quote</a></li>
           </ul>
         </div>
 
@@ -237,7 +237,7 @@ export default function Pricing() {
               </div>
 
               <button className="mt-3 rounded-sm bg-[#7C3AED] py-4 text-lg font-black text-violet-100 transition hover:bg-violet-500">
-                🔒 Process Payment — $12,000.00
+                Process Payment - $12,000.00
               </button>
             </div>
           </section>

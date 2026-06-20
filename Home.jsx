@@ -130,7 +130,7 @@ export default function Home() {
                         ? "/contact"
                         : link === "Pricing"
                           ? "/pricing"
-                          : "/#services"
+                          : "/services"
                 }
                 className={
                   link === "Home"
@@ -144,7 +144,7 @@ export default function Home() {
           </div>
 
           <a
-            href="/contact"
+            href="/request-quote"
             className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
           >
             Request Quote
@@ -182,12 +182,6 @@ export default function Home() {
                   className="rounded-md bg-violet-600 px-6 py-3 text-sm font-bold text-white shadow-[0_10px_30px_rgba(124,58,237,0.45)] transition hover:-translate-y-0.5 hover:bg-violet-500"
                 >
                   Explore Services -&gt;
-                </a>
-                <a
-                  href="/about"
-                  className="rounded-md border border-white/12 bg-white/10 px-6 py-3 text-sm font-bold text-slate-200 transition hover:bg-white/15"
-                >
-                  View Portfolio
                 </a>
               </div>
             </div>
@@ -287,7 +281,7 @@ export default function Home() {
               software challenges.
             </p>
             <a
-              href="mailto:hello@codecraft.solutions"
+              href="/request-quote"
               className="mt-8 inline-flex rounded-md bg-violet-600 px-9 py-4 text-sm font-black text-white shadow-[0_13px_34px_rgba(124,58,237,0.44)] transition hover:-translate-y-0.5 hover:bg-violet-500"
             >
               Request a Quote
@@ -317,7 +311,7 @@ export default function Home() {
               <li><a className="transition hover:text-white" href="/about">About Us</a></li>
               <li><a className="transition hover:text-white" href="/services">Services</a></li>
               <li><a className="transition hover:text-white" href="/pricing">Pricing</a></li>
-              <li><a className="transition hover:text-white" href="/contact">Request Quote</a></li>
+              <li><a className="transition hover:text-white" href="/request-quote">Request Quote</a></li>
             </ul>
           </div>
 

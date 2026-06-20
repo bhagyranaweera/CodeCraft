@@ -1,9 +1,9 @@
 const navLinks = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Pricing", "/pricing"],
   ["Services", "/services"],
   ["Pricing", "/pricing"],
+  ["Contact", "/contact"],
 ];
 
 const services = [
@@ -76,24 +76,24 @@ const plans = [
 
 function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#100d17]/95 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-[1180px] items-center justify-between px-4 sm:h-20 sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="/" aria-label="CodeCraft Solutions home">
           <img
             src="/Images/codecraft-logo.svg"
             alt="CodeCraft Solutions"
-            className="h-8 w-24 object-contain object-left sm:h-10 sm:w-32"
+            className="h-12 w-40 object-contain object-left sm:w-48"
           />
         </a>
 
-        <div className="hidden items-center gap-7 text-[11px] font-semibold text-slate-400 md:flex">
+        <div className="hidden items-center gap-8 text-sm font-semibold text-slate-400 md:flex">
           {navLinks.map(([label, href], index) => (
             <a
               key={`${label}-${index}`}
               href={href}
               className={
                 label === "Services"
-                  ? "text-violet-300 underline decoration-violet-500 decoration-2 underline-offset-8 transition hover:text-white"
+                  ? "text-violet-400 underline decoration-violet-500 decoration-2 underline-offset-8 transition hover:text-white"
                   : "transition hover:text-white"
               }
             >
@@ -103,8 +103,8 @@ function Header() {
         </div>
 
         <a
-          href="/contact"
-          className="rounded-sm bg-violet-600 px-5 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-[0_0_28px_rgba(124,58,237,0.32)] transition hover:bg-violet-500 sm:px-7"
+          href="/request-quote"
+          className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
         </a>
@@ -224,12 +224,12 @@ function ServiceCard({ service }) {
       )}
 
       {service.actions && (
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 md:mt-0 md:max-w-xs md:translate-x-[115%] md:-translate-y-20">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {service.actions.map((action) => (
             <a
               key={action}
               href="/contact"
-              className="rounded-sm bg-white/8 px-8 py-4 text-center text-[10px] font-black uppercase tracking-[0.16em] text-slate-300 transition hover:bg-white/12 hover:text-white"
+              className="rounded-sm bg-white/8 px-8 py-5 text-center text-[10px] font-black uppercase tracking-[0.16em] text-slate-300 transition hover:bg-white/12 hover:text-white"
             >
               {action}
             </a>
@@ -299,7 +299,7 @@ function Footer() {
             <li><a href="/about" className="transition hover:text-white">About Us</a></li>
             <li><a href="/services" className="font-black text-violet-300">Services</a></li>
             <li><a href="/pricing" className="transition hover:text-white">Pricing</a></li>
-            <li><a href="/contact" className="transition hover:text-white">Request Quote</a></li>
+            <li><a href="/request-quote" className="transition hover:text-white">Request Quote</a></li>
           </ul>
         </div>
         <div>
@@ -387,7 +387,7 @@ export default function Services() {
             <div className="mt-8 divide-y divide-white/10 border-y border-white/10">
               {["How do you handle project management?", "Do we own the source code?"].map((question) => (
                 <details key={question} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-black text-slate-200">
+                  <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-normal text-slate-200">
                     {question}
                     <span className="text-xl font-light text-slate-400 transition group-open:rotate-45">+</span>
                   </summary>

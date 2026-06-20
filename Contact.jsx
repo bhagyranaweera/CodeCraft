@@ -13,7 +13,7 @@ function Header() {
         <div className="hidden items-center gap-8 text-sm font-semibold text-slate-400 md:flex">
           <a href="/" className="transition hover:text-white">Home</a>
           <a href="/about" className="transition hover:text-white">About Us</a>
-          <a href="/#services" className="transition hover:text-white">Services</a>
+          <a href="/services" className="transition hover:text-white">Services</a>
           <a href="/pricing" className="transition hover:text-white">Pricing</a>
           <a
             href="/contact"
@@ -24,7 +24,7 @@ function Header() {
         </div>
 
         <a
-          href="/contact"
+          href="/request-quote"
           className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
@@ -59,9 +59,9 @@ function Footer() {
           <ul className="mt-5 space-y-3">
             <li><a href="/" className="transition hover:text-white">Home</a></li>
             <li><a href="/about" className="transition hover:text-white">About Us</a></li>
-            <li><a href="/#services" className="transition hover:text-white">Services</a></li>
+            <li><a href="/services" className="transition hover:text-white">Services</a></li>
             <li><a href="/pricing" className="transition hover:text-white">Pricing</a></li>
-            <li><a href="/contact" className="transition hover:text-white">Request Quote</a></li>
+            <li><a href="/request-quote" className="transition hover:text-white">Request Quote</a></li>
           </ul>
         </div>
 
@@ -188,7 +188,7 @@ export default function Contact() {
                     specialized request quote portal.
                   </p>
                   <a
-                    href="/contact"
+                    href="/request-quote"
                     className="mt-6 inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-[#06B6D4]"
                   >
                     Request Quote Portal -&gt;

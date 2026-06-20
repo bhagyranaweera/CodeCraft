@@ -269,7 +269,7 @@ function PricingCard({ plan }) {
         ))}
       </ul>
       <a
-        href="/contact"
+        href="/request-quote"
         className={`mt-8 flex w-full justify-center rounded-sm border py-3 text-xs font-black transition ${
           plan.popular
             ? "border-violet-200 bg-violet-200 text-violet-900 hover:bg-white"
@@ -322,7 +322,7 @@ function Footer() {
             <a href="/contact" aria-label="Email" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
               <span className="text-lg">@</span>
             </a>
-            <a href="https://www.instagram.com/" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
+            <a href="https://www.instagram.com/codecraftsolution4/?hl=en" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />

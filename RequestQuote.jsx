@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { postQuoteRequest } from "./src/api";
+
 const expertise = [
   ["Custom Software Development", "Bespoke solutions for complex systems."],
   ["Web Development", "Creating responsive and modern business websites tailored to client requirements."],
@@ -82,10 +84,10 @@ function Footer() {
                 <path d="M9.7 8.8c.2 3 1.8 4.6 4.6 5.4l1-1.1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
               </svg>
             </a>
-            <a href="mailto:hello@codecraft.solutions" aria-label="Email" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
+            <a href="mailto:codecraftsolution4@gmail.com" aria-label="Email" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
               <span className="text-lg">@</span>
             </a>
-            <a href="https://www.instagram.com/" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
+            <a href="https://www.instagram.com/codecraftsolution4/?hl=en" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
@@ -107,10 +109,44 @@ function Footer() {
 
 export default function RequestQuote() {
   const [showRequestPopup, setShowRequestPopup] = useState(false);
+  const [requestPopupTitle, setRequestPopupTitle] = useState("Request Submitted");
+  const [requestPopupText, setRequestPopupText] = useState(
+    "Thank you for sharing your project details. Our engineering team will review your request and contact you soon.",
+  );
+  const [isSubmittingQuote, setIsSubmittingQuote] = useState(false);
 
-  const handleQuoteSubmit = (event) => {
+  const handleQuoteSubmit = async (event) => {
     event.preventDefault();
-    setShowRequestPopup(true);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmittingQuote(true);
+
+    try {
+      await postQuoteRequest({
+        full_name: formData.get("full_name"),
+        company_email: formData.get("company_email"),
+        company_name: formData.get("company_name"),
+        job_title: formData.get("job_title"),
+        project_summary: formData.get("project_summary"),
+        budget_range: formData.get("budget_range"),
+        timeline_goal: formData.get("timeline_goal"),
+        expertise: formData.getAll("expertise"),
+      });
+      form.reset();
+      setRequestPopupTitle("Request Submitted");
+      setRequestPopupText("Thank you for sharing your project details. Your request was saved to the backend database.");
+    } catch (error) {
+      setRequestPopupTitle("Request Not Submitted");
+      setRequestPopupText(
+        error.message === "Failed to fetch"
+          ? "The backend server is not reachable. Start FastAPI with uvicorn app.main:app --reload and try again."
+          : error.message,
+      );
+    } finally {
+      setIsSubmittingQuote(false);
+      setShowRequestPopup(true);
+    }
   };
 
   return (
@@ -141,7 +177,7 @@ export default function RequestQuote() {
                         <span className="block text-sm font-semibold text-white">{title}</span>
                         <span className="mt-1 block text-xs leading-5 text-slate-400">{copy}</span>
                       </span>
-                      <input type="checkbox" className="mt-1 accent-violet-500" />
+                      <input type="checkbox" name="expertise" value={title} className="mt-1 accent-violet-500" />
                     </label>
                   ))}
                 </div>
@@ -155,21 +191,23 @@ export default function RequestQuote() {
                 <div className="mt-5">
                   <Field label="Project Summary">
                     <textarea
+                      name="project_summary"
                       className="h-[112px] w-full resize-none border border-white/5 bg-white/7 px-4 py-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500"
                       placeholder="Describe your objectives, tech stack preferences, and current pain points..."
+                      required
                     />
                   </Field>
                 </div>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
                   <Field label="Budget Range">
-                    <select className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-300 outline-none focus:border-violet-500">
+                    <select name="budget_range" className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-300 outline-none focus:border-violet-500">
                       <option>$10k - $25k</option>
                       <option>$25k - $75k</option>
                       <option>$75k+</option>
                     </select>
                   </Field>
                   <Field label="Timeline Goal">
-                    <select className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-300 outline-none focus:border-violet-500">
+                    <select name="timeline_goal" className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-300 outline-none focus:border-violet-500">
                       <option>Within 1 Month</option>
                       <option>1-3 Months</option>
                       <option>Flexible</option>
@@ -185,22 +223,22 @@ export default function RequestQuote() {
                 </h2>
                 <div className="mt-5 grid gap-4 md:grid-cols-2">
                   <Field label="Full Name">
-                    <input className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="John Doe" />
+                    <input name="full_name" className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="John Doe" required />
                   </Field>
                   <Field label="Company Email">
-                    <input className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="john@company.com" />
+                    <input name="company_email" type="email" className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="john@company.com" required />
                   </Field>
                   <Field label="Company Name">
-                    <input className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="Acme Inc." />
+                    <input name="company_name" className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="Acme Inc." />
                   </Field>
                   <Field label="Job Title">
-                    <input className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="CTO / Product Owner" />
+                    <input name="job_title" className="h-12 w-full border border-white/5 bg-white/7 px-4 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-violet-500" placeholder="CTO / Product Owner" />
                   </Field>
                 </div>
               </section>
 
-              <button className="rounded-sm bg-violet-200 py-4 text-base font-medium text-violet-950 transition hover:bg-white" type="submit">
-                Submit Request -&gt;
+              <button className="rounded-sm bg-violet-200 py-4 text-base font-medium text-violet-950 transition hover:bg-white" type="submit" disabled={isSubmittingQuote}>
+                {isSubmittingQuote ? "Submitting..." : "Submit Request ->"}
               </button>
             </form>
 
@@ -246,9 +284,9 @@ export default function RequestQuote() {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-[#06B6D4] bg-[#06B6D4]/10 text-xl text-[#06B6D4]">
               ✓
             </div>
-            <h2 className="mt-5 text-2xl font-semibold text-violet-100">Request Submitted</h2>
+            <h2 className="mt-5 text-2xl font-semibold text-violet-100">{requestPopupTitle}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-400">
-              Thank you for sharing your project details. Our engineering team will review your request and contact you soon.
+              {requestPopupText}
             </p>
             <button
               className="mt-6 bg-violet-600 px-7 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-violet-500"

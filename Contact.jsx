@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { postContactMessage } from "./src/api";
+
 function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
@@ -102,14 +104,14 @@ function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:engineering@codecraft.solutions"
+              href="mailto:codecraftsolution4@gmail.com"
               aria-label="Email"
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14"
             >
               <span className="text-lg">@</span>
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/codecraftsolution4/?hl=en"
               aria-label="Instagram"
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14"
             >
@@ -135,10 +137,40 @@ function Footer() {
 
 export default function Contact() {
   const [showMessagePopup, setShowMessagePopup] = useState(false);
+  const [messagePopupText, setMessagePopupText] = useState(
+    "Thank you for contacting CodeCraft Solutions. Our team will get back to you soon.",
+  );
+  const [messagePopupTitle, setMessagePopupTitle] = useState("Message Sent Successfully");
+  const [isSubmittingMessage, setIsSubmittingMessage] = useState(false);
 
-  const handleMessageSubmit = (event) => {
+  const handleMessageSubmit = async (event) => {
     event.preventDefault();
-    setShowMessagePopup(true);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmittingMessage(true);
+
+    try {
+      await postContactMessage({
+        full_name: formData.get("full_name"),
+        email: formData.get("email"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+      });
+      form.reset();
+      setMessagePopupTitle("Message Sent Successfully");
+      setMessagePopupText("Thank you for contacting CodeCraft Solutions. Your message was saved to the backend database.");
+    } catch (error) {
+      setMessagePopupTitle("Message Not Sent");
+      setMessagePopupText(
+        error.message === "Failed to fetch"
+          ? "The backend server is not reachable. Start FastAPI with uvicorn app.main:app --reload and try again."
+          : error.message,
+      );
+    } finally {
+      setIsSubmittingMessage(false);
+      setShowMessagePopup(true);
+    }
   };
 
   return (
@@ -166,22 +198,26 @@ export default function Contact() {
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
                   <Field label="Full Name">
                     <input
+                      name="full_name"
                       className="h-12 w-full border border-white/5 bg-white/10 px-4 text-sm font-normal text-slate-200 outline-none transition placeholder:text-slate-500 focus:border-violet-500"
                       placeholder="John Doe"
+                      required
                     />
                   </Field>
                   <Field label="Email Address">
                     <input
+                      name="email"
                       className="h-12 w-full border border-white/5 bg-white/10 px-4 text-sm font-normal text-slate-200 outline-none transition placeholder:text-slate-500 focus:border-violet-500"
                       placeholder="john@company.com"
                       type="email"
+                      required
                     />
                   </Field>
                 </div>
 
                 <div className="mt-4">
                   <Field label="Subject">
-                    <select className="h-12 w-full border border-white/5 bg-white/10 px-4 text-sm font-normal text-slate-300 outline-none transition focus:border-violet-500">
+                    <select name="subject" className="h-12 w-full border border-white/5 bg-white/10 px-4 text-sm font-normal text-slate-300 outline-none transition focus:border-violet-500">
                       <option>General Support</option>
                       <option>Project Consultation</option>
                       <option>Partnership</option>
@@ -192,8 +228,10 @@ export default function Contact() {
                 <div className="mt-4">
                   <Field label="Message">
                     <textarea
+                      name="message"
                       className="h-[132px] w-full resize-none border border-white/5 bg-white/10 px-4 py-4 text-sm font-normal text-slate-200 outline-none transition placeholder:text-slate-500 focus:border-violet-500"
                       placeholder="How can we help your business today?"
+                      required
                     />
                   </Field>
                 </div>
@@ -201,8 +239,9 @@ export default function Contact() {
                 <button
                   className="mt-4 bg-violet-200 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-violet-900 transition hover:bg-white"
                   type="submit"
+                  disabled={isSubmittingMessage}
                 >
-                  Send Message &gt;
+                  {isSubmittingMessage ? "Sending..." : "Send Message >"}
                 </button>
               </form>
 
@@ -232,7 +271,7 @@ export default function Contact() {
                       <div>
                         <h3 className="font-semibold text-white">Technological Hub East</h3>
                         <p className="mt-1 font-normal leading-5 text-slate-400">
-                          128 Innovation Way, Suite 400<br />Palo Alto, CA 94304
+                          240/15, Weeramavatha,<br />Depanama, Pannipitiya
                         </p>
                       </div>
                     </div>
@@ -247,7 +286,7 @@ export default function Contact() {
                       <span className="text-violet-200">✉</span>
                       <div>
                         <h3 className="font-semibold text-white">Email Us</h3>
-                        <p className="mt-1 font-normal text-slate-400">engineering@codecraft.solutions</p>
+                        <p className="mt-1 font-normal text-slate-400">codecraftsolution4@gmail.com</p>
                       </div>
                     </div>
                   </div>
@@ -289,9 +328,9 @@ export default function Contact() {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-[#06B6D4] bg-[#06B6D4]/10 text-xl text-[#06B6D4]">
               ✓
             </div>
-            <h2 className="mt-5 text-2xl font-semibold text-violet-100">Message Sent Successfully</h2>
+            <h2 className="mt-5 text-2xl font-semibold text-violet-100">{messagePopupTitle}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-400">
-              Thank you for contacting CodeCraft Solutions. Our team will get back to you soon.
+              {messagePopupText}
             </p>
             <button
               className="mt-6 bg-violet-600 px-7 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-violet-500"

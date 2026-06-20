@@ -350,14 +350,14 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="mailto:hello@codecraft.solutions"
+                href="mailto:codecraftsolution4@gmail.com"
                 aria-label="Email"
                 className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
               >
                 <span className="text-lg">@</span>
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/codecraftsolution4/?hl=en"
                 aria-label="Instagram"
                 className="flex h-12 w-12 items-center justify-center rounded-md bg-white/7 text-slate-300 transition hover:bg-white/12 hover:text-white"
               >

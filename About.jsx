@@ -137,7 +137,7 @@ function Footer() {
               <span className="text-lg">@</span>
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/codecraftsolution4/?hl=en"
               aria-label="Instagram"
               className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14"
             >

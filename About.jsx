@@ -301,21 +301,6 @@ export default function About() {
             <div className="mx-auto mt-10 grid max-w-[980px] gap-x-32 gap-y-12 md:grid-cols-2">
               <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
                 <img
-                  src="/Images/dinusha-leadership.png"
-                  alt="Dinusha Sewwandi"
-                  className="h-[386px] w-full object-cover"
-                />
-                <div className="p-5">
-                  <h3 className="text-sm font-black text-slate-200">Dinusha Sewwandi</h3>
-                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Chief Executive Officer</p>
-                  <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
-                    A former CTO with a passion for scalable systems and growth strategies.
-                  </p>
-                </div>
-              </article>
-
-              <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
-                <img
                   src="/Images/bhagya-leadership.png"
                   alt="Bhagya Ranaweera"
                   className="h-[386px] w-full object-cover"
@@ -331,15 +316,15 @@ export default function About() {
 
               <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
                 <img
-                  src="/Images/dahami-leadership.png"
-                  alt="Dahami Withana"
+                  src="/Images/dinusha-leadership.png"
+                  alt="Dinusha Sewwandi"
                   className="h-[386px] w-full object-cover"
                 />
                 <div className="p-5">
-                  <h3 className="text-sm font-black text-slate-200">Dahami Withana</h3>
-                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Head of Operations</p>
+                  <h3 className="text-sm font-black text-slate-200">Dinusha Sewwandi</h3>
+                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Chief Executive Officer</p>
                   <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
-                    Ensuring seamless delivery and fostering long-term partnerships with enterprise clients.
+                    A former CTO with a passion for scalable systems and growth strategies.
                   </p>
                 </div>
               </article>
@@ -352,6 +337,21 @@ export default function About() {
                 />
                 <div className="p-5">
                   <h3 className="text-sm font-black text-slate-200">Ruvishi Dissanayake</h3>
+                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Head of Operations</p>
+                  <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
+                    Ensuring seamless delivery and fostering long-term partnerships with enterprise clients.
+                  </p>
+                </div>
+              </article>
+
+              <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
+                <img
+                  src="/Images/dahami-leadership.png"
+                  alt="Dahami Withana"
+                  className="h-[386px] w-full object-cover"
+                />
+                <div className="p-5">
+                  <h3 className="text-sm font-black text-slate-200">Dahami Withana</h3>
                   <p className="mt-1 text-xs font-black text-[#06B6D4]">Head of Operations</p>
                   <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
                     Ensuring seamless delivery and fostering long-term partnerships with enterprise clients.

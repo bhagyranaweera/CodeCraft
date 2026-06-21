@@ -307,7 +307,7 @@ export default function About() {
                 />
                 <div className="p-5">
                   <h3 className="text-sm font-black text-slate-200">Bhagya Ranaweera</h3>
-                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Chief Technology Officer</p>
+                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Chief Executive Officer</p>
                   <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
                     PhD in Computer Science, specialized in distributed systems and high-availability.
                   </p>
@@ -322,7 +322,7 @@ export default function About() {
                 />
                 <div className="p-5">
                   <h3 className="text-sm font-black text-slate-200">Dinusha Sewwandi</h3>
-                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Chief Executive Officer</p>
+                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Project Manager</p>
                   <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
                     A former CTO with a passion for scalable systems and growth strategies.
                   </p>
@@ -337,7 +337,7 @@ export default function About() {
                 />
                 <div className="p-5">
                   <h3 className="text-sm font-black text-slate-200">Ruvishi Dissanayake</h3>
-                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Head of Operations</p>
+                  <p className="mt-1 text-xs font-black text-[#06B6D4]">Project Manager</p>
                   <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
                     Ensuring seamless delivery and fostering long-term partnerships with enterprise clients.
                   </p>

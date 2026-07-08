@@ -152,6 +152,9 @@ function Footer() {
       </div>
 
       <p className="mx-auto mt-10 max-w-[1220px] text-center text-[9px] tracking-[0.22em] text-slate-500">
+        <span className="mb-2 block text-sm font-bold normal-case tracking-normal text-slate-400">
+          ACN: 150 673 000 | ABN: 90 202 086 664
+        </span>
         <span className="block font-normal uppercase">(c) 2024 CodeCraft Solutions. All rights reserved.</span>
         <span className="mt-2 block text-sm font-bold normal-case tracking-normal">
           This website is for a class assignment project and not for commercial purpose.
@@ -226,10 +229,11 @@ export default function About() {
                 Born from a passion for clean, resilient code.
               </h2>
               <p className="mt-6 text-sm font-semibold leading-7 text-slate-400">
-                Founded in 2018, CodeCraft Solutions began as a specialized consultancy focused on
-                fixing the "unfixable" architectural debt of legacy systems. We quickly realized
-                that the market lacked partners who treated software as a genuine engineering
-                discipline rather than just a delivery task.
+                Founded in 2018, CodeCraft Solutions Pty Ltd (ACN 150 673 000 / ABN 90 202 086
+                664) began as a specialized consultancy focused on fixing the "unfixable"
+                architectural debt of legacy systems. We quickly realized that the market lacked
+                partners who treated software as a genuine engineering discipline rather than just
+                a delivery task.
               </p>
               <p className="mt-5 text-sm font-semibold leading-7 text-slate-400">
                 Today, we serve global enterprises and ambitious startups alike, bridging the gap

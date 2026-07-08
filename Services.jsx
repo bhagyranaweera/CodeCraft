@@ -333,6 +333,9 @@ function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-9 max-w-[1120px] text-center text-[9px] tracking-[0.22em] text-slate-500">
+        <span className="mb-2 block text-sm font-bold normal-case tracking-normal text-slate-400">
+          ACN: 150 673 000 | ABN: 90 202 086 664
+        </span>
         <span className="block font-normal uppercase">(c) 2024 CodeCraft Solutions. All rights reserved.</span>
         <span className="mt-2 block text-sm font-bold normal-case tracking-normal">
           This website is for a class assignment project and not for commercial purpose.

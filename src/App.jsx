@@ -16,23 +16,25 @@ function PageShell({ children }) {
 }
 
 function App() {
-  if (window.location.pathname === "/about") {
+  const route = window.location.hash.replace("#", "") || "/";
+
+  if (route === "/about") {
     return <PageShell><About /></PageShell>;
   }
 
-  if (window.location.pathname === "/services") {
+  if (route === "/services") {
     return <PageShell><Services /></PageShell>;
   }
 
-  if (window.location.pathname === "/contact") {
+  if (route === "/contact") {
     return <PageShell><Contact /></PageShell>;
   }
 
-  if (window.location.pathname === "/pricing") {
+  if (route === "/pricing") {
     return <PageShell><Pricing /></PageShell>;
   }
 
-  if (window.location.pathname === "/request-quote") {
+  if (route === "/request-quote") {
     return <PageShell><RequestQuote /></PageShell>;
   }
 

@@ -352,6 +352,6 @@ img[src*="contact-map"]:hover {
   background:
     linear-gradient(90deg, rgba(16, 12, 22, 0.78) 0%, rgba(16, 12, 22, 0.38) 56%, rgba(16, 12, 22, 0.86) 100%),
     linear-gradient(180deg, rgba(16, 12, 22, 0.24) 0%, rgba(16, 12, 22, 0.9) 100%),
-    url("/Images/about-office-hero.png") center right / cover no-repeat,
+    url("../Images/about-office-hero.png") center right / cover no-repeat,
     #100c16;
 }

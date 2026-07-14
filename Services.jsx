@@ -78,9 +78,9 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="/" aria-label="CodeCraft Solutions home">
+        <a href="#/" aria-label="CodeCraft Solutions home">
           <img
-            src="/Images/codecraft-logo.svg"
+            src="./Images/codecraft-logo.svg"
             alt="CodeCraft Solutions"
             className="h-12 w-40 object-contain object-left sm:w-48"
           />
@@ -103,7 +103,7 @@ function Header() {
         </div>
 
         <a
-          href="/request-quote"
+          href="#/request-quote"
           className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
@@ -228,7 +228,7 @@ function ServiceCard({ service }) {
           {service.actions.map((action) => (
             <a
               key={action}
-              href="/contact"
+              href="#/contact"
               className="rounded-sm bg-white/8 px-8 py-5 text-center text-[10px] font-black uppercase tracking-[0.16em] text-slate-300 transition hover:bg-white/12 hover:text-white"
             >
               {action}
@@ -269,7 +269,7 @@ function PricingCard({ plan }) {
         ))}
       </ul>
       <a
-        href="/request-quote"
+        href="#/request-quote"
         className={`mt-8 flex w-full justify-center rounded-sm border py-3 text-xs font-black transition ${
           plan.popular
             ? "border-violet-200 bg-violet-200 text-violet-900 hover:bg-white"
@@ -287,7 +287,7 @@ function Footer() {
     <footer className="bg-[#0b0811] px-6 py-10">
       <div className="mx-auto grid max-w-[1120px] gap-10 text-sm text-slate-400 md:grid-cols-[220px_150px_190px_150px] md:justify-between">
         <div>
-          <img src="/Images/codecraft-logo.svg" alt="CodeCraft Solutions" className="h-8 w-20 object-contain object-left" />
+          <img src="./Images/codecraft-logo.svg" alt="CodeCraft Solutions" className="h-8 w-20 object-contain object-left" />
           <p className="mt-5 max-w-[210px] text-sm font-semibold leading-6">
             Precision Engineering for Software. Building the future of digital infrastructure since 2018.
           </p>
@@ -295,17 +295,17 @@ function Footer() {
         <div>
           <h3 className="font-black text-white">Company</h3>
           <ul className="mt-5 space-y-3">
-            <li><a href="/" className="transition hover:text-white">Home</a></li>
-            <li><a href="/about" className="transition hover:text-white">About Us</a></li>
-            <li><a href="/services" className="font-black text-violet-300">Services</a></li>
-            <li><a href="/pricing" className="transition hover:text-white">Pricing</a></li>
-            <li><a href="/request-quote" className="transition hover:text-white">Request Quote</a></li>
+            <li><a href="#/" className="transition hover:text-white">Home</a></li>
+            <li><a href="#/about" className="transition hover:text-white">About Us</a></li>
+            <li><a href="#/services" className="font-black text-violet-300">Services</a></li>
+            <li><a href="#/pricing" className="transition hover:text-white">Pricing</a></li>
+            <li><a href="#/request-quote" className="transition hover:text-white">Request Quote</a></li>
           </ul>
         </div>
         <div>
           <h3 className="font-black text-white">Resources</h3>
           <ul className="mt-5 space-y-3">
-            <li><a href="/contact" className="transition hover:text-white">Contact</a></li>
+            <li><a href="#/contact" className="transition hover:text-white">Contact</a></li>
             <li><a href="#privacy" data-policy-popup="privacy" className="transition hover:text-white">Privacy Policy</a></li>
             <li><a href="#terms" data-policy-popup="terms" className="transition hover:text-white">Terms of Service</a></li>
           </ul>
@@ -319,7 +319,7 @@ function Footer() {
                 <path d="M9.7 8.8c.2 3 1.8 4.6 4.6 5.4l1-1.1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
               </svg>
             </a>
-            <a href="/contact" aria-label="Email" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
+            <a href="#/contact" aria-label="Email" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">
               <span className="text-lg">@</span>
             </a>
             <a href="https://www.instagram.com/codecraftsolution4/?hl=en" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-slate-300 transition hover:bg-white/14">

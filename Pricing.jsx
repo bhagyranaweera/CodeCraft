@@ -12,9 +12,9 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="flex items-center" aria-label="CodeCraft Solutions home">
+        <a href="#/" className="flex items-center" aria-label="CodeCraft Solutions home">
           <img
-            src="/Images/codecraft-logo.svg"
+            src="./Images/codecraft-logo.svg"
             alt="CodeCraft Solutions"
             className="h-12 w-40 object-contain object-left sm:w-48"
           />
@@ -37,7 +37,7 @@ function Header() {
         </div>
 
         <a
-          href="/request-quote"
+          href="#/request-quote"
           className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
@@ -53,7 +53,7 @@ function Footer() {
       <div className="mx-auto grid max-w-[1560px] grid-cols-1 gap-12 text-sm text-slate-300 md:grid-cols-[320px_180px_220px_160px] md:justify-between md:gap-16">
         <div className="md:pl-2">
           <img
-            src="/Images/codecraft-logo.svg"
+            src="./Images/codecraft-logo.svg"
             alt="CodeCraft Solutions"
             className="h-[68px] w-[250px] object-contain object-left"
           />
@@ -66,18 +66,18 @@ function Footer() {
         <div className="pt-1">
           <h3 className="text-lg font-black text-white">Company</h3>
           <ul className="mt-8 space-y-5 text-base text-slate-300">
-            <li><a className="transition hover:text-white" href="/">Home</a></li>
-            <li><a className="transition hover:text-white" href="/about">About Us</a></li>
-            <li><a className="transition hover:text-white" href="/services">Services</a></li>
-            <li><a className="font-black text-violet-300" href="/pricing">Pricing</a></li>
-            <li><a className="transition hover:text-white" href="/request-quote">Request Quote</a></li>
+            <li><a className="transition hover:text-white" href="#/">Home</a></li>
+            <li><a className="transition hover:text-white" href="#/about">About Us</a></li>
+            <li><a className="transition hover:text-white" href="#/services">Services</a></li>
+            <li><a className="font-black text-violet-300" href="#/pricing">Pricing</a></li>
+            <li><a className="transition hover:text-white" href="#/request-quote">Request Quote</a></li>
           </ul>
         </div>
 
         <div className="pt-1">
           <h3 className="text-lg font-black text-white">Resources</h3>
           <ul className="mt-8 space-y-5 text-base text-slate-300">
-            <li><a className="transition hover:text-white" href="/contact">Contact</a></li>
+            <li><a className="transition hover:text-white" href="#/contact">Contact</a></li>
             <li><a className="transition hover:text-white" href="#privacy" data-policy-popup="privacy">Privacy Policy</a></li>
             <li><a className="transition hover:text-white" href="#terms" data-policy-popup="terms">Terms of Service</a></li>
           </ul>
@@ -192,7 +192,7 @@ export default function Pricing() {
           <div className="mb-14 grid items-center gap-6 md:grid-cols-[280px_1fr]">
             <div>
               <a
-                href="/"
+                href="#/"
                 className="inline-flex items-center gap-4 text-2xl font-black text-violet-200 transition hover:text-white"
               >
                 <span className="text-3xl">←</span>

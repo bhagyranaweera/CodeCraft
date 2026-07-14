@@ -111,7 +111,7 @@ export default function Home() {
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
           <a href="#home" className="flex items-center" aria-label="CodeCraft Solutions home">
             <img
-              src="/Images/codecraft-logo.svg"
+              src="./Images/codecraft-logo.svg"
               alt="CodeCraft Solutions"
               className="h-12 w-40 object-contain object-left sm:w-48"
             />
@@ -144,7 +144,7 @@ export default function Home() {
           </div>
 
           <a
-            href="/request-quote"
+            href="#/request-quote"
             className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
           >
             Request Quote
@@ -258,7 +258,7 @@ export default function Home() {
             <div className="mt-8 flex items-center justify-center gap-5">
               <div className="h-[58px] w-[58px] overflow-hidden rounded-lg border-2 border-violet-500 bg-slate-900 p-1 shadow-[0_0_22px_rgba(124,58,237,0.62)]">
                 <img
-                  src="/Images/person-icon.png"
+                  src="./Images/person-icon.png"
                   alt="Marcus Thorne"
                   className="h-full w-full rounded-md object-cover"
                 />
@@ -281,7 +281,7 @@ export default function Home() {
               software challenges.
             </p>
             <a
-              href="/request-quote"
+              href="#/request-quote"
               className="mt-8 inline-flex rounded-md bg-violet-600 px-9 py-4 text-sm font-black text-white shadow-[0_13px_34px_rgba(124,58,237,0.44)] transition hover:-translate-y-0.5 hover:bg-violet-500"
             >
               Request a Quote
@@ -294,7 +294,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1560px] grid-cols-1 gap-12 text-sm text-slate-300 md:grid-cols-[320px_180px_220px_160px] md:justify-between md:gap-16">
           <div className="md:pl-2">
             <img
-              src="/Images/codecraft-logo.svg"
+              src="./Images/codecraft-logo.svg"
               alt="CodeCraft Solutions"
               className="h-[68px] w-[250px] object-contain object-left"
             />
@@ -307,18 +307,18 @@ export default function Home() {
           <div className="pt-1">
             <h3 className="text-lg font-black text-white">Company</h3>
             <ul className="mt-8 space-y-5 text-base text-slate-300">
-              <li><a className="transition hover:text-white" href="/">Home</a></li>
-              <li><a className="transition hover:text-white" href="/about">About Us</a></li>
-              <li><a className="transition hover:text-white" href="/services">Services</a></li>
-              <li><a className="transition hover:text-white" href="/pricing">Pricing</a></li>
-              <li><a className="transition hover:text-white" href="/request-quote">Request Quote</a></li>
+              <li><a className="transition hover:text-white" href="#/">Home</a></li>
+              <li><a className="transition hover:text-white" href="#/about">About Us</a></li>
+              <li><a className="transition hover:text-white" href="#/services">Services</a></li>
+              <li><a className="transition hover:text-white" href="#/pricing">Pricing</a></li>
+              <li><a className="transition hover:text-white" href="#/request-quote">Request Quote</a></li>
             </ul>
           </div>
 
           <div className="pt-1">
             <h3 className="text-lg font-black text-white">Resources</h3>
             <ul className="mt-8 space-y-5 text-base text-slate-300">
-              <li><a className="transition hover:text-white" href="/contact">Contact</a></li>
+              <li><a className="transition hover:text-white" href="#/contact">Contact</a></li>
               <li><a className="transition hover:text-white" href="#privacy" data-policy-popup="privacy">Privacy Policy</a></li>
               <li><a className="transition hover:text-white" href="#terms" data-policy-popup="terms">Terms of Service</a></li>
             </ul>

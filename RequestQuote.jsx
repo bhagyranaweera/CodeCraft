@@ -13,7 +13,7 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#/" className="flex items-center" aria-label="CodeCraft Solutions home">
+        <a href="/CodeCraft/" className="flex items-center" aria-label="CodeCraft Solutions home">
           <img
             src="./Images/codecraft-logo.svg"
             alt="CodeCraft Solutions"
@@ -21,14 +21,14 @@ function Header() {
           />
         </a>
         <div className="hidden items-center gap-8 text-sm font-semibold text-slate-400 md:flex">
-          <a href="#/" className="transition hover:text-white">Home</a>
-          <a href="#/about" className="transition hover:text-white">About Us</a>
-          <a href="#/services" className="transition hover:text-white">Services</a>
-          <a href="#/pricing" className="transition hover:text-white">Pricing</a>
-          <a href="#/contact" className="transition hover:text-white">Contact</a>
+          <a href="/CodeCraft/" className="transition hover:text-white">Home</a>
+          <a href="/CodeCraft/about" className="transition hover:text-white">About Us</a>
+          <a href="/CodeCraft/services" className="transition hover:text-white">Services</a>
+          <a href="/CodeCraft/pricing" className="transition hover:text-white">Pricing</a>
+          <a href="/CodeCraft/contact" className="transition hover:text-white">Contact</a>
         </div>
         <a
-          href="#/request-quote"
+          href="/CodeCraft/request-quote"
           className="rounded-sm bg-violet-600 px-6 py-3 text-xs font-black uppercase tracking-[0.16em] text-white shadow-[0_0_26px_rgba(124,58,237,0.28)] transition hover:bg-violet-500"
         >
           Request Quote
@@ -60,17 +60,17 @@ function Footer() {
         <div>
           <h3 className="font-black text-white">Company</h3>
           <ul className="mt-5 space-y-3">
-            <li><a href="#/" className="transition hover:text-white">Home</a></li>
-            <li><a href="#/about" className="transition hover:text-white">About Us</a></li>
-            <li><a href="#/services" className="transition hover:text-white">Services</a></li>
-            <li><a href="#/pricing" className="transition hover:text-white">Pricing</a></li>
-            <li><a href="#/request-quote" className="font-black text-violet-300">Request Quote</a></li>
+            <li><a href="/CodeCraft/" className="transition hover:text-white">Home</a></li>
+            <li><a href="/CodeCraft/about" className="transition hover:text-white">About Us</a></li>
+            <li><a href="/CodeCraft/services" className="transition hover:text-white">Services</a></li>
+            <li><a href="/CodeCraft/pricing" className="transition hover:text-white">Pricing</a></li>
+            <li><a href="/CodeCraft/request-quote" className="font-black text-violet-300">Request Quote</a></li>
           </ul>
         </div>
         <div>
           <h3 className="font-black text-white">Resources</h3>
           <ul className="mt-5 space-y-3">
-            <li><a href="#/contact" className="transition hover:text-white">Contact</a></li>
+            <li><a href="/CodeCraft/contact" className="transition hover:text-white">Contact</a></li>
             <li><a href="#privacy" data-policy-popup="privacy" className="transition hover:text-white">Privacy Policy</a></li>
             <li><a href="#terms" data-policy-popup="terms" className="transition hover:text-white">Terms of Service</a></li>
           </ul>

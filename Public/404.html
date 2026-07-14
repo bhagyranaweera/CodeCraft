@@ -8,13 +8,17 @@
       var repoName = "/CodeCraft";
       var path = window.location.pathname;
       var route = path.indexOf(repoName) === 0 ? path.slice(repoName.length) : "/";
-      var target = repoName + "/#/" + route.replace(/^\/+/, "");
 
       if (window.location.search) {
-        target += window.location.search;
+        route += window.location.search;
       }
 
-      window.location.replace(target);
+      if (window.location.hash) {
+        route += window.location.hash;
+      }
+
+      window.sessionStorage.setItem("codecraft-route", route || "/");
+      window.location.replace(repoName + "/");
     </script>
   </head>
   <body>

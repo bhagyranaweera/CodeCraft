@@ -46,6 +46,14 @@ function getRoute() {
     return window.location.hash.replace("#", "") || "/";
   }
 
+  const redirectedRoute = window.sessionStorage.getItem("codecraft-route");
+
+  if (redirectedRoute) {
+    window.sessionStorage.removeItem("codecraft-route");
+    window.history.replaceState(null, "", `/CodeCraft${redirectedRoute}`);
+    return redirectedRoute;
+  }
+
   const pathname = window.location.pathname.replace(/\/$/, "") || "/";
   const projectPath = pathname.replace(/^\/CodeCraft/i, "") || "/";
 

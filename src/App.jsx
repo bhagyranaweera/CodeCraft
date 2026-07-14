@@ -16,7 +16,7 @@ function PageShell({ children }) {
 }
 
 function App() {
-  const route = window.location.hash.replace("#", "") || "/";
+  const route = getRoute();
 
   if (route === "/about") {
     return <PageShell><About /></PageShell>;
@@ -39,6 +39,17 @@ function App() {
   }
 
   return <PageShell><Home /></PageShell>;
+}
+
+function getRoute() {
+  if (window.location.hash) {
+    return window.location.hash.replace("#", "") || "/";
+  }
+
+  const pathname = window.location.pathname.replace(/\/$/, "") || "/";
+  const projectPath = pathname.replace(/^\/CodeCraft/i, "") || "/";
+
+  return projectPath;
 }
 
 export default App;

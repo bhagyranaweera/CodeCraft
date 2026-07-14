@@ -109,7 +109,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0c16] text-slate-100 selection:bg-violet-500/40">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#15111d]/95 backdrop-blur">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <a href="#home" className="flex items-center" aria-label="CodeCraft Solutions home">
+          <a href="/CodeCraft/" className="flex items-center" aria-label="CodeCraft Solutions home">
             <img
               src="./Images/codecraft-logo.svg"
               alt="CodeCraft Solutions"

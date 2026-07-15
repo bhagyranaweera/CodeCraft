@@ -1,4 +1,6 @@
 import heroAsset from "./src/assets/hero.png";
+import logoAsset from "./src/assets/codecraft-logo-original.png";
+import personIconAsset from "./src/assets/person-icon.png";
 
 const navLinks = ["Home", "About Us", "Services", "Pricing", "Contact"];
 
@@ -111,7 +113,7 @@ export default function Home() {
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
           <a href="/CodeCraft/" className="flex items-center" aria-label="CodeCraft Solutions home">
             <img
-              src="./Images/codecraft-logo.svg"
+              src={logoAsset}
               alt="CodeCraft Solutions"
               className="h-12 w-40 object-contain object-left sm:w-48"
             />
@@ -258,7 +260,7 @@ export default function Home() {
             <div className="mt-8 flex items-center justify-center gap-5">
               <div className="h-[58px] w-[58px] overflow-hidden rounded-lg border-2 border-violet-500 bg-slate-900 p-1 shadow-[0_0_22px_rgba(124,58,237,0.62)]">
                 <img
-                  src="./Images/person-icon.png"
+                  src={personIconAsset}
                   alt="Marcus Thorne"
                   className="h-full w-full rounded-md object-cover"
                 />
@@ -294,7 +296,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1560px] grid-cols-1 gap-12 text-sm text-slate-300 md:grid-cols-[320px_180px_220px_160px] md:justify-between md:gap-16">
           <div className="md:pl-2">
             <img
-              src="./Images/codecraft-logo.svg"
+              src={logoAsset}
               alt="CodeCraft Solutions"
               className="h-[68px] w-[250px] object-contain object-left"
             />

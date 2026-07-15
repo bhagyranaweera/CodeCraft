@@ -1,3 +1,10 @@
+import logoAsset from "./src/assets/codecraft-logo-original.png";
+import bhagyaAsset from "./src/assets/bhagya-leadership.png";
+import dinushaAsset from "./src/assets/dinusha-leadership.png";
+import ruvishiAsset from "./src/assets/ruvishi-leadership.png";
+import dahamiAsset from "./src/assets/dahami-leadership.png";
+import officeHeroAsset from "./src/assets/about-office-hero.png";
+
 const processRows = [
   {
     number: "1",
@@ -43,7 +50,7 @@ function Header() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="/CodeCraft/" aria-label="CodeCraft Solutions home">
           <img
-            src="./Images/codecraft-logo.svg"
+            src={logoAsset}
             alt="CodeCraft Solutions"
             className="h-12 w-40 object-contain object-left sm:w-48"
           />
@@ -78,7 +85,7 @@ function Footer() {
     <footer className="bg-[#15111a] px-6 py-10">
       <div className="mx-auto grid max-w-[1220px] gap-10 text-sm text-slate-400 md:grid-cols-[230px_150px_190px_150px] md:justify-between">
         <div>
-          <img src="./Images/codecraft-logo.svg" alt="CodeCraft Solutions" className="h-8 w-20 object-contain object-left" />
+          <img src={logoAsset} alt="CodeCraft Solutions" className="h-8 w-20 object-contain object-left" />
           <p className="mt-6 max-w-[210px] text-sm font-semibold leading-6">
             Precision Engineering for Software. Building the future of digital infrastructure since 2018.
           </p>
@@ -205,7 +212,12 @@ export default function About() {
       <Header />
 
       <main>
-        <section className="about-reference-hero relative flex min-h-[640px] items-center overflow-hidden border-b border-white/5 pt-20">
+        <section
+          className="about-reference-hero relative flex min-h-[640px] items-center overflow-hidden border-b border-white/5 pt-20"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(16, 12, 22, 0.78) 0%, rgba(16, 12, 22, 0.38) 56%, rgba(16, 12, 22, 0.86) 100%), linear-gradient(180deg, rgba(16, 12, 22, 0.24) 0%, rgba(16, 12, 22, 0.9) 100%), url(${officeHeroAsset})`,
+          }}
+        >
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,12,24,0.98)_0%,rgba(17,12,24,0.82)_45%,rgba(17,12,24,0.58)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_46%,rgba(124,58,237,0.12),transparent_26%)]" />
           <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6">
@@ -305,7 +317,7 @@ export default function About() {
             <div className="mx-auto mt-10 grid max-w-[980px] gap-x-32 gap-y-12 md:grid-cols-2">
               <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
                 <img
-                  src="./Images/bhagya-leadership.png"
+                  src={bhagyaAsset}
                   alt="Bhagya Ranaweera"
                   className="h-[386px] w-full object-cover"
                 />
@@ -320,7 +332,7 @@ export default function About() {
 
               <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
                 <img
-                  src="./Images/dinusha-leadership.png"
+                  src={dinushaAsset}
                   alt="Dinusha Sewwandi"
                   className="h-[386px] w-full object-cover"
                 />
@@ -335,7 +347,7 @@ export default function About() {
 
               <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
                 <img
-                  src="./Images/ruvishi-leadership.png"
+                  src={ruvishiAsset}
                   alt="Ruvishi Dissanayake"
                   className="h-[386px] w-full object-cover"
                 />
@@ -350,7 +362,7 @@ export default function About() {
 
               <article className="overflow-hidden rounded-md bg-[#1d1823] shadow-xl">
                 <img
-                  src="./Images/dahami-leadership.png"
+                  src={dahamiAsset}
                   alt="Dahami Withana"
                   className="h-[386px] w-full object-cover"
                 />

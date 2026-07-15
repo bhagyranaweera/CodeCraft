@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import { postQuoteRequest } from "./src/api";
+import logoAsset from "./src/assets/codecraft-logo-original.png";
+import officeHeroAsset from "./src/assets/about-office-hero.png";
 
 const expertise = [
   ["Custom Software Development", "Bespoke solutions for complex systems."],
@@ -15,7 +17,7 @@ function Header() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="/CodeCraft/" className="flex items-center" aria-label="CodeCraft Solutions home">
           <img
-            src="./Images/codecraft-logo.svg"
+            src={logoAsset}
             alt="CodeCraft Solutions"
             className="h-12 w-40 object-contain object-left sm:w-48"
           />
@@ -52,7 +54,7 @@ function Footer() {
     <footer className="bg-[#0b0811] px-6 py-10">
       <div className="mx-auto grid max-w-[1120px] gap-10 text-sm text-slate-400 md:grid-cols-[220px_150px_190px_150px] md:justify-between">
         <div>
-          <img src="./Images/codecraft-logo.svg" alt="CodeCraft Solutions" className="h-8 w-20 object-contain object-left" />
+          <img src={logoAsset} alt="CodeCraft Solutions" className="h-8 w-20 object-contain object-left" />
           <p className="mt-5 max-w-[210px] text-sm font-semibold leading-6">
             Precision Engineering for Software. Building the future of digital infrastructure since 2018.
           </p>
@@ -263,7 +265,12 @@ export default function RequestQuote() {
                 ))}
               </div>
 
-              <div className="mt-9 bg-[linear-gradient(90deg,rgba(15,23,42,0.5),rgba(15,23,42,0.05)),url('../Images/about-office-hero.png')] bg-cover bg-center p-6">
+              <div
+                className="mt-9 bg-cover bg-center p-6"
+                style={{
+                  backgroundImage: `linear-gradient(90deg, rgba(15,23,42,0.5), rgba(15,23,42,0.05)), url(${officeHeroAsset})`,
+                }}
+              >
                 <p className="mt-14 text-sm font-semibold leading-6 text-white">
                   "They solved architectural challenges our previous vendor couldn't touch."
                 </p>

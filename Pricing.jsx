@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logoAsset from "./src/assets/codecraft-logo-original.png";
 
 const navItems = [
   ["Home", "/CodeCraft/"],
@@ -14,7 +15,7 @@ function Header() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="/CodeCraft/" className="flex items-center" aria-label="CodeCraft Solutions home">
           <img
-            src="./Images/codecraft-logo.svg"
+            src={logoAsset}
             alt="CodeCraft Solutions"
             className="h-12 w-40 object-contain object-left sm:w-48"
           />
@@ -53,7 +54,7 @@ function Footer() {
       <div className="mx-auto grid max-w-[1560px] grid-cols-1 gap-12 text-sm text-slate-300 md:grid-cols-[320px_180px_220px_160px] md:justify-between md:gap-16">
         <div className="md:pl-2">
           <img
-            src="./Images/codecraft-logo.svg"
+            src={logoAsset}
             alt="CodeCraft Solutions"
             className="h-[68px] w-[250px] object-contain object-left"
           />
